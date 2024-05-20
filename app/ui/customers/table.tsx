@@ -6,11 +6,13 @@ import {
   FormattedCustomersTable,
 } from '@/app/lib/definitions';
 
-export default async function CustomersTable({
-  customers,
-}: {
+type CustomersTableProps = {
   customers: FormattedCustomersTable[];
-}) {
+};
+
+export default async function CustomersTable(props: CustomersTableProps) {
+  const { customers } = props;
+
   return (
     <div className="w-full">
       <h1 className={`${lusitana.className} mb-8 text-xl md:text-2xl`}>
